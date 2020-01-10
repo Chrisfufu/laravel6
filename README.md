@@ -9,6 +9,7 @@ Set-ExecutionPolicy RemoteSigned; [System.Net.ServicePointManager]::SecurityProt
 5. cgr laravel/installer  
 6. cgr cretueusebiu/valet-windows  
 7. http://mayakron.altervista.org/wikibase/show.php?id=AcrylicWindows10Configuration  
+    7.1 remember to diable the internet onece, and then enable it.   
 8. valet install  
 9. create a folder to store the project repo, then type
   valet install
