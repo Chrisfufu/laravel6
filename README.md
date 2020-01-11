@@ -2,12 +2,14 @@
 # install on windows tutorial:
 
 1. open PowerShell as Administrator.  
-2. Set-ExecutionPolicy RemoteSigned; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri "https://github.com/cretueusebiu/valet-windows/raw/master/bin/php73.ps1" -OutFile $env:temp\php73.ps1; .$env:temp\php73.ps1  
+2. run the following command to PowerShell  
+Set-ExecutionPolicy RemoteSigned; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri "https://github.com/cretueusebiu/valet-windows/raw/master/bin/php73.ps1" -OutFile $env:temp\php73.ps1; .$env:temp\php73.ps1  
 3. install composer https://getcomposer.org/download/  
 4. composer global require consolidation/cgr  
 5. cgr laravel/installer  
 6. cgr cretueusebiu/valet-windows  
 7. http://mayakron.altervista.org/wikibase/show.php?id=AcrylicWindows10Configuration  
+    7.1 remember to diable the internet onece, and then enable it.   
 8. valet install  
 9. create a folder to store the project repo, then type
   valet install
