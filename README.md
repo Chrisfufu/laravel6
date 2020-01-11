@@ -32,6 +32,7 @@ https://stackoverflow.com/questions/18339513/access-denied-for-user-root-mysql-o
 https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos
 
     4.1 remove MySQL by cleaning up everything.  
+     
         brew remove mysql  
         brew cleanup  
         launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
