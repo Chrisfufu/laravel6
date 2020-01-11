@@ -14,6 +14,16 @@
   in PowerShell to install the package
 
 
+fix bugs:
+run the command in MySQL console.
+1. The server requested authentication method unknown to the client  
+    solution:  
+    alter user 'root'@'localhost' identified with mysql_native_password by 'lizuofu8426;'
+2.  Access denied for user 'ODBC'@'localhost' (using password: NO)  
+    solution:  
+    mysql -u root -p  
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
