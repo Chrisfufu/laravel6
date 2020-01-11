@@ -24,6 +24,9 @@ run the command in MySQL console.
 2.  Access denied for user 'ODBC'@'localhost' (using password: NO)  
     solution:  
     mysql -u root -p  
+3.  sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables
+
+https://stackoverflow.com/questions/18339513/access-denied-for-user-root-mysql-on-mac-os
 
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
