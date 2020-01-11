@@ -36,8 +36,10 @@ https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos
         brew cleanup  
         launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
         rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
-        sudo rm -rf /usr/local/var/mysql
-    4.2 start from scratch.
+        sudo rm -rf /usr/local/var/mysql  
+        
+    4.2 start from scratch.  
+        
         brew install mysql  
 
         optional: [
