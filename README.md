@@ -29,45 +29,33 @@ run the command in MySQL console.
 https://stackoverflow.com/questions/18339513/access-denied-for-user-root-mysql-on-mac-os
 
 4.  access denied:
-https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos/6378429#6378429
+https://stackoverflow.com/questions/4359131/brew-install-mysql-on-macos
 
-Step-by-step:
+    4.1 remove MySQL by cleaning up everything.  
+        brew remove mysql  
+        brew cleanup  
+        launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
+        rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
+        sudo rm -rf /usr/local/var/mysql
+    4.2 start from scratch.
+        brew install mysql  
 
-brew remove mysql
+        optional: [
+        unset TMPDIR  
+        mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp   
+        ]
 
-brew cleanup
+        mysql.server start   
 
-launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+        # the following 5.5.10 will be replaced with the version the user downloaded.
+        # use tab could automatically pop up the version
+        /usr/local/Cellar/mysql/5.5.10/bin/mysql_secure_installation
 
-rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+        # start  
+        launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
 
-sudo rm -rf /usr/local/var/mysql
-I then started from scratch:
+        # stop  
+        launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist  
 
-installed mysql with brew install mysql
-ran the commands brew suggested: (see note: below)
 
-unset TMPDIR
-
-mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
-Start mysql with mysql.server start command, to be able to log on it
-
-Used the alternate security script:
-
-/usr/local/Cellar/mysql/5.5.10/bin/mysql_secure_installation
-Followed the launchctl section from the brew package script output such as,
-
-#start
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-
-#stop
-launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-Boom.
-
-Hope that helps someone!
-
-Note: the --force bit on brew cleanup will also cleanup outdated kegs, think it's a new-ish homebrew feature.
-
-Note the second: a commenter says step 2 is not required. I don't want to test it, so YMMV!
-
-mysql -u root -p
+        mysql -u root -p
