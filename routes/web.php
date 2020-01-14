@@ -35,3 +35,26 @@ Route::get('/', function(){
 Route::get('/contact', function(){
   return view('contact');
 });
+
+Route::get('/about', function(){
+  // $article = App\Article::latest()->get();
+  // $article = App\Article::take(2)->get();
+  // $article = App\Article::paginate(2);
+  // return $article;
+
+  return view('about', [
+    'articles' => App\Article::take(3)->latest()->get()
+  ]);
+});
+
+Route::get('/articles', function(){
+  return view('articles', [
+    'articles' => App\Article::take(3)->latest()->get()
+  ]);
+});
+Route::get('/articles', "ArticlesController@index");
+Route::post('/articles', 'ArticlesController@store');
+Route::get('/articles/create', "ArticlesController@create");
+Route::get('/articles/{article}', "ArticlesController@show")->name('articles.show');
+Route::get('/articles/{article}/edit', "ArticlesController@edit");
+Route::put('articles/{article}', 'ArticlesController@update');
