@@ -32,10 +32,12 @@ Route::get('/', function(){
   return view('welcome');
 });
 
-Route::get('/contact', function(){
-  return view('contact');
-});
+// Route::get('/contact', function(){
+//   return view('contact');
+// });
 
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 Route::get('/about', function(){
   // $article = App\Article::latest()->get();
   // $article = App\Article::take(2)->get();
@@ -52,6 +54,7 @@ Route::get('/articles', function(){
     'articles' => App\Article::take(3)->latest()->get()
   ]);
 });
+
 Route::get('/articles', "ArticlesController@index");
 Route::post('/articles', 'ArticlesController@store');
 Route::get('/articles/create', "ArticlesController@create");
