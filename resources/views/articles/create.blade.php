@@ -51,6 +51,24 @@
             </div>
 
             <div class="field">
+                <label class="label" for="tags">Tags</label>
+                <div class="control select is-multiple">
+                    <select name='tags[]' multiple>
+                      @foreach($tags as $tag)
+                        <option
+                          value="{{$tag->id}}"
+                          >
+                          {{$tag->name}}
+                        </option>
+                      @endforeach
+                    </select>
+                    @if ($errors->has('tags'))
+                        <p  class='help is-danger'> {{ $errors->first('tags') }} </p>
+                    @endif
+                </div>
+            </div>
+
+            <div class="field">
                 <div class="control">
                     <button class="button is-link" type="submit">Submit</button>
                 </div>
