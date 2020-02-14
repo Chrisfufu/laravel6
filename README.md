@@ -11,9 +11,11 @@ Set-ExecutionPolicy RemoteSigned; [System.Net.ServicePointManager]::SecurityProt
 7. http://mayakron.altervista.org/wikibase/show.php?id=AcrylicWindows10Configuration  
     7.1 remember to diable the internet onece, and then enable it.   
 8. valet install  
-9. create a folder to store the project repo, then type
-  valet install
-  in PowerShell to install the package
+9. create a folder to store the project repo, then type  
+  valet install  
+  in PowerShell to install the package  
+10. jump in the project repo:  
+  composer install
 
 
 fix bugs:
