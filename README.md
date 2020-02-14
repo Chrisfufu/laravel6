@@ -14,10 +14,11 @@ Set-ExecutionPolicy RemoteSigned; [System.Net.ServicePointManager]::SecurityProt
 9. create a folder to store the project repo, then type  
     #### valet install  
     #### valet park   
-  in PowerShell to install the package  
+    in PowerShell to install the package  
+    
 10. jump in the project repo:  
-    #### composer install
-    #### php artisan key:generate
+    #### composer install  
+    #### php artisan key:generate  
 
 
 fix bugs:
